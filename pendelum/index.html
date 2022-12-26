@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <style>
+            body {
+             font-family: Arial;
+             font-size: 50px;
+         }
+         #base {
+            background-color: gold;
+            width: 631px;
+            height: 20px;
+            border: 3px solid black;
+         }
+         #line1, #line2, #line3, #line4 {
+            background-color: blue;
+            height: 500px;
+            width: 10px;
+            box-shadow: #000 0px 0px 4px,   #000 0px 0px 4px,   #000 0px 0px 4px,
+             #000 0px 0px 4px,   #000 0px 0px 4px,   #000 0px 0px 1px;
+         }
+         #circle1, #circle2, #circle3, #circle4 {
+            background-color: red;
+            height: 100px;
+            box-shadow: #000 0px 0px 5px,   #000 0px 0px 5px,   #000 0px 0px 5px,
+             #000 0px 0px 5px,   #000 0px 0px 5px,   #000 0px 0px 1px;
+            width: 100px;
+            border-radius: 50%;
+         }
+         #pendelum {
+             position: absolute;
+             top: 2%;
+             left: 26%;
+             transform: translate(-25%, -25%);
+             vertical-align: middle;
+             height: 700px;
+             transform: scale(0.8, 0.8);
+         }
+         #circle1 {
+            transform: translate(110%, -1500%);
+            animation-name: circle1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+         }
+          @keyframes circle1 {
+              0% {transform: translate(-130%, -1580%);}
+              50% {transform: translate(110%, -1500%);}
+              100%{transform: translate(110%, -1500%);}
+          }
+         #circle2 {
+            transform: translate(210%, -1600%);
+         }
+         #circle3 {
+            transform: translate(310%, -1700%); vertical-align: middle;
+         }
+         #circle4 {
+            transform: translate(410%, -1800%); vertical-align: middle;
+            animation-name: circle4;
+            animation-duration: 2s;
+            animation-delay: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+         }
+         @keyframes circle4 {
+             0%{transform: translate(410%, -1800%);}
+             50%{transform: translate(410%, -1800%);}
+             100%{transform: translate(650%, -1894%);}
+         }
+         #line1 {
+            position: relative;
+            transform: translate(410%, -8%) rotate(30deg);vertical-align: middle;
+            animation-name: line1;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            z-index: -1;
+         }
+         @keyframes line1 {
+             0%   {transform: translate(410%, -8%) rotate(30deg);}
+             50% {transform: translate(1610%, 0%);}
+             100%{transform: translate(1610%, 0%);}
+         }
+         #line2 {
+            transform: translate(2610%, -100%); vertical-align: middle;
+         }
+         #line3 {
+            transform: translate(3610%, -200%); vertical-align: middle;
+         }
+         #line4 {
+            position: relative;
+            transform: translate(4610%, -300%); vertical-align: middle;
+            animation-name: line4;
+            animation-duration: 2s;
+            animation-delay: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            z-index: -1;
+         }
+         @keyframes line4 {
+             0%{transform: translate(4610%, -300%);}
+             50%{transform: translate(4610%, -300%);}
+             100%{transform: translate(5810%, -308%) rotate(-30deg);}
+         }
+         </style>
+<title>pendelum</title>
+    </head>
+    <body>
+    <div id="pendelum">
+    <div id="base"></div>
+    <div id="line1"></div>
+    <div id="line2"></div>
+    <div id="line3"></div>
+    <div id="line4"></div>
+    <div id="circle1"></div>
+    <div id="circle2"></div>
+    <div id="circle3"></div>
+    <div id="circle4"></div>
+    </div>
+    </body>
+</html>

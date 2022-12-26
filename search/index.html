@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <style>
+            body {
+             font-family: Arial;
+             font-size: 20px;
+             color: white;
+             background-color: #ffc34d;
+         }
+         input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+         form {
+             position: absolute;
+             top: 50%;
+             text-align: center;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+         .boi {
+             width: 540px;
+             height: 43px;
+             padding-left: 50px;
+             font-size: 20px;
+             margin-bottom: 20px;
+             margin-top: 0px;
+             border: none;
+             border-radius: 50px;
+             background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/7e/Vector_search_icon.svg');
+             background-size: 23px;
+             background-position: left;
+             background-position-x: 10px;
+    background-repeat: no-repeat;
+         }
+.boi:focus {
+    outline: none;
+}
+h1 {
+    font-size: 70px;
+    margin-bottom: 20px;
+}
+         </style>
+<title>Search</title>
+    </head>
+    <body>
+     <form ondragleave="" autocomplete="off" id="content">
+         <h1>Search</h1>
+         <input name="q" required placeholder="Search Anything" type="search" class="boi" id="2145"><br>
+         <input type="radio" id="2004" name="n1" onclick="google()" required>Google &nbsp;
+         <input type="radio" name="n1" onclick="bing()">Bing &nbsp;
+         <input type="radio" name="n1" onclick="yahoo()">Yahoo &nbsp;<br>
+     </form>
+     <script>
+         function google() {
+             document.getElementById("content").action = "https://www.google.com/search";
+             document.getElementById("2145").name="q";
+         }
+         function bing() {
+            document.getElementById("content").action = "https://www.bing.com/search";
+            document.getElementById("2145").name="q";
+         }
+         function yahoo() {
+            document.getElementById("content").action = "https://uk.search.yahoo.com/search";
+            document.getElementById("2145").name="p";
+         }
+         
+     </script>
+    </body>
+</html>

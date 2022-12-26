@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <link rel="icon" type="image/png" sizes="880x880" href="Steam.png">
+        <meta name="viewport" content="width=device-width, initial-scale=0.6">
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+        <title>Steam invite</title>
+        <style>
+            
+        </style>
+    </head>
+    <body onload="load()">
+        <div class="contents">
+            <label>Email</label><br>
+            <input autocomplete="off" type="email" id="email" class="invito"><br><br>
+            <label>Name</label><br>
+            <input autocomplete="off" type="Text" id="name" class="invito"><br><br>
+            <label>Class</label><br>
+            <input autocomplete="off" type="Text" id="class" class="invito"><br><br><br><br>
+            <input type="button" class="btn" id="btn" value="Send"><br>
+            <h3 id="2012">Sending....</h3>
+            
+    </div>
+    <img src="steam3.png" class="image">
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+    <script>
+        function load() {
+        setTimeout(function(){ alert("© 2020 Valve Corporation. All rights reserved. the Steam logo and the Steam Favicon are trademarks and/or registered trademarks of Valve Corporation. All other trademarks are property of their respective owners. \n \n The Webpage made by Ahmed Khalid Prep 2B"); }, 2700);
+        }
+     function feedback() {
+        if ((document.getElementById("email").value, document.getElementById("name").value != "") && (document.getElementById("class").value != "")) {
+        Email.send({
+        SecureToken : "0564a1d5-b5e1-400e-ac37-9bbd78f5d971",
+        To : 'ahmedkmh2145@gmail.com',
+        From : "ahmedkmh2020@gmail.com",
+        Subject : "Steam Invite",
+        Body : " <b>Email:</b><br>" + document.getElementById("email").value + "<br /><b>Name:</b><br />" + document.getElementById("name").value + "<br><b>Class:</b><br>" + document.getElementById("class").value,
+        
+    }).then(
+        
+        function prep7() {
+        document.getElementById('2012').style.display='none'
+        },
+    )
+    .then(
+        message => alert("Steam Invite has been send")
+    )
+        }
+        else {
+            alert("Please fill out the brackets.")
+        }
+     }
+     function feedback2() {
+        if ((document.getElementById("email").value, document.getElementById("name").value != "") && (document.getElementById("class").value != "")) {
+        document.getElementById('2012').style.display='inline'; 
+    }
+     }
+     document.getElementById("btn").addEventListener("click", feedback);
+     document.getElementById("btn").addEventListener("click", feedback2);
+</script>
+    </body>
+</html>

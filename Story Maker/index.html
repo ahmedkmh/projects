@@ -1,0 +1,117 @@
+<html>
+ <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+         input:focus {outline: none !important;}
+         body {
+             font-family: Arial;
+             font-size: 30px;
+             background-color: #0C0A3E;
+         }
+         form.boi {
+             position: absolute;
+             top: 50%;
+             color: white;
+             border: 10px solid #b33f62;
+             border-radius: 30px;
+             background-color: #f9564f;
+             padding: 50px;
+             padding-top: 80px;
+             padding-bottom: 80px;
+             display: inline;
+             text-align: center;
+             left: 50%;
+             transform: translate(-50%, -50%);
+         }
+         #firm {
+             font-size: 20px;
+             color: red;
+             display: none;
+             width: 430px;
+             text-align: center;
+             transition: 0.2s;
+         }
+         .btn {
+             padding: 5px;
+             font-size: 17px;
+         }
+         label {
+             width: 150px;
+             display: inline-block;
+             text-align: center;
+         }
+         input.text {
+             padding: 10px;
+             padding-left: 5px;
+             border: 3px solid #b33f62;
+             border-radius: 10px;
+             font-size:20px;
+             width:220px;
+             height:35px;
+         }
+         .yas {
+            position: absolute;
+            color: white;
+             border: 10px solid #b33f62;
+             border-radius: 30px;
+             background-color: #f9564f;
+             padding: 50px;
+             padding-top: 80px;
+             padding-bottom: 80px;
+             top: 50%;
+             text-align: center;
+             display: none;
+             left: 50%;
+             transform: translate(-50%, -50%); 
+         }
+     </style>
+    <title>Story generator</title>
+ </head>
+ <body>
+         <form id="boi" class="boi" name="f1">
+            <h1>Story Maker</h1>
+         <label>Character</label> <input id="text" class="text" placeholder="Character Name" maxlength="15" type="text" name="c1"><br>
+         <label>Age</label> <input id="text1" class="text" placeholder="his\her Age" type="number" min="0" max="100" name="a1"><br>
+         <label>Favourite</label> <input type="text" id="text2" maxlength="20" class="text" placeholder="his\her Favourite" name="t1"><br><br>
+         <input class="btn" type="button" onclick="prep2()" value="submit">
+         <input class="btn" type="reset" onclick="prep4()" value="reset"><br>
+         <b><p id="firm"></p></b>
+         </form> 
+         <div id="2145" class="yas">
+         <h1>Story:</h1>
+         <p id="lolo"></p>
+         <input class="btn" type="button" onclick="prep3()" value="back">
+         </div>
+     <script>
+         console.log ("Hi I see you are using dev tools well hello i am the creator of this website")
+         function capitalizeFirst(str)
+{
+ return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+}
+       function prep2() {
+           if ((f1.c1.value, f1.a1.value ,f1.t1.value != "") && (f1.a1.value <101) && (f1.a1.value >-1)) {
+           var character = f1.c1.value;
+           var age = f1.a1.value;
+           var thing = f1.t1.value;
+           document.getElementById("lolo").innerHTML = "Hi my name is " + capitalizeFirst(character) + ", I am " + capitalizeFirst(age) + " years old. and I love " + capitalizeFirst(thing);
+           document.getElementById("2145").style.display = "block";
+           document.getElementById("boi").style.display = "none";
+           document.getElementById("firm").style.display = "none";
+           } else {
+            document.getElementById("firm").style.display = "block";
+            document.getElementById("firm").innerHTML = "incorrect age must be more than -1 and less than 101 and dont leave any text area empty";
+            document.getElementById("text").value = "";
+            document.getElementById("text1").value = "";
+            document.getElementById("text2").value = "";
+           }
+       }
+       function prep3() {
+        document.getElementById("2145").style.display = "none";
+           document.getElementById("boi").style.display = "inline";
+       }
+       function prep4() {
+        document.getElementById("firm").style.display = "none";
+       }
+</script>
+ </body>
+</html>
