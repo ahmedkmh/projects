@@ -10,17 +10,19 @@
     </head>
     <body onload="load()">
         <div class="contents">
+            <form action="https://formspree.io/f/moqzarlk" method="post">
             <label>Email</label><br>
             <input autocomplete="off" type="email" id="email" class="invito"><br><br>
             <label>Name</label><br>
             <input autocomplete="off" type="Text" id="name" class="invito"><br><br>
             <label>Class</label><br>
             <input autocomplete="off" type="Text" id="class" class="invito"><br><br><br><br>
-            <input type="button" class="btn" id="btn" value="Send"><br>
+            <input type="Submit" class="btn" id="btn" value="Send">
+            </form><br>
             <h3 id="2012">Sending....</h3>
             
     </div>
-    <img src="steam3.png" class="image">
+    <img src="Steam3.png" class="image">
     <script src="https://smtpjs.com/v3/smtp.js">
     </script>
     <script>
@@ -42,9 +44,7 @@
         document.getElementById('2012').style.display='none'
         },
     )
-    .then(
-        message => alert("Steam Invite has been send")
-    )
+
         }
         else {
             alert("Please fill out the brackets.")
