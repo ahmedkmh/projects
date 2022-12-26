@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>form</title>
+        <style>
+            body {
+                margin: 0;
+                background-color: rgb(231, 231, 231);
+                font-family: sans-serif;
+                vertical-align: middle;
+            }
+            #content {
+                text-align: center;
+                background-color: rgb(212, 212, 212);
+                padding: 40px;
+                margin-top: 0;
+                margin-left: auto;
+                margin-right: auto;
+                width: 25%;
+                border: 0px solid black;
+                
+                border-radius: 17px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+            .normal {
+                text-align: left;
+            }
+            img {
+                width: auto;
+                border-radius: 10px;
+                height: 20%;
+                border: 2px solid black;
+            }
+            input, #task {
+                border: 3px solid black;
+                border-radius: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 20px;
+            }
+            #task:active {
+                background-color: darkgray;
+            }
+            li {
+                text-align: left;
+            }
+            .tools {
+                border: 2px solid black;
+                border-radius: 5px;
+            }
+            #delete {
+                background-color: rgb(252, 116, 116);
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            #done {
+                background-color: rgb(36, 255, 36);
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+            #up {
+                background-color: aquamarine;
+                border-radius: 0px;
+                border-left: 0;
+            }
+            #down {
+                background-color: rgb(209, 255, 118);
+                border-radius: 0px;
+                border-left: 0;
+                border-right: 0;
+            }
+            ol * {
+                margin-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+        <div id="content">
+            <img src="https://scontent.fcai20-4.fna.fbcdn.net/v/t39.30808-6/276148923_105422242116580_7414393946566999892_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=0KUtz_mcBYQAX-du5Q7&_nc_ht=scontent.fcai20-4.fna&oh=00_AfBrxVAiAbXOhRzKqTbp_MwV5HEnhYKV7JygYDyvhV-WHw&oe=63A1A9D8" alt="">
+            <h3>points = <b id="point">0</b></h3>
+            <h1>Deci To Do List</h1>
+            <input id="name" placeholder="Enter Task Here" type="text">
+            <br>
+            <br><button id="task" onclick="name2 ()">Add Task</button>
+            <br>
+            <ol id="list">
+
+            </ol>
+        </div>
+        </center>
+        <script>
+           var i = 0;
+           var points = 0
+           function doneo (parento) {
+                points++
+                parent = document.getElementById(parento);
+                parent.remove();
+                document.getElementById("point").innerHTML = points;
+           }
+            function deleteo (parento) {
+                parent = document.getElementById(parento);
+                parent.remove();
+            }
+            function upo (parento) {
+                list = document.getElementById("list");
+                parent = document.getElementById(parento);
+                order = Array.from(list.children).indexOf(parent)
+                list.insertBefore(parent.cloneNode(true), list.children[order-1])
+                parent.remove();
+            }
+            function downo (parento) {
+                list = document.getElementById("list");
+                parent = document.getElementById(parento);
+                order = Array.from(list.children).indexOf(parent)
+                list.insertBefore(parent.cloneNode(true), list.children[order+2])
+                parent.remove();
+            }
+            function addbutton() {
+                document.getElementById("item" + i).innerHTML += "  <button class='tools' id='delete' onclick='deleteo (this.parentNode.id)''>Delete</button><button class='tools' id='up' onclick='upo (this.parentNode.id)''>Up</button><button class='tools' id='down' onclick='downo (this.parentNode.id)'>Down</button><button class='tools' id='done' onclick='doneo (this.parentNode.id)''>Done</button>"
+            }
+            function name2 () {
+                i++
+                para = document.createElement("li");
+                para.innerHTML = document.getElementById("name").value;
+                para.setAttribute("id", "item" + i);
+                document.getElementById("list").appendChild(para);
+                console.log(i)
+                addbutton();
+            }
+        </script>
+</html>
