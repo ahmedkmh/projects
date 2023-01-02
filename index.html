@@ -63,7 +63,7 @@
         let htmlString = '<ol id="listo">';
         i = 0;
         for (let file of data) {
-         if (file.name != "index.html") {
+         if (file.name != "index.html" && file.name != "README.MD") {
           i += 1
           htmlString += `<li class="items" id="item${i}"><button onclick="location.href='${file.path}';">${file.name}</a></li>`;
         }
