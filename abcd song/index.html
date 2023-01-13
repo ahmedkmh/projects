@@ -149,7 +149,7 @@
     </head>
     <body>
         <audio id="song">
-            <source src="abcd.mp3" type="audio/mp3">
+            <source onload="show()" src="abcd.mp3" type="audio/mp3">
         </audio>
         <div id="lolo">
 <label id="A">A</label>
@@ -179,7 +179,7 @@
 <label id="Y">Y</label>
 <label id="Z">Z</label><br>
 </div>
-<input id="btn" class="btn" type="button" onclick="Kids()" value="Play"><br>
+<input id="btn" style="display: none;" class="btn" type="button" onclick="Kids()" value="Play"><br>
 <p id="result">Reload to try again</p>
 <p id="waiting">Please Wait...</p>
 <script>
@@ -210,6 +210,9 @@
     var X = document.getElementById("X")
     var Y = document.getElementById("Y")
     var Z = document.getElementById("Z")
+    function show() {
+      document.getElementById("btn").style.display = "inline"
+    }
     function Kids() {
         document.getElementById("btn").style.display="none";
         document.getElementById("waiting").style.display="inline";
