@@ -144,6 +144,19 @@
     animation-iteration-count: infinite;
     animation-direction: alternate;
     }
+    #loading {
+        text-shadow: #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 3px,
+             #000 0px 0px 3px,   #000 0px 0px 3px,   #000 0px 0px 1px;
+        color: yellow;
+        display: inline;
+        position: absolute !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -130%);
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    }
          </style>
 <title>abcd</title>
     </head>
@@ -182,6 +195,7 @@
 <input id="btn" style="display: none;" class="btn" type="button" onclick="Kids()" value="Play"><br>
 <p id="result">Reload to try again</p>
 <p id="waiting">Please Wait...</p>
+<p id="loading">Please Wait...</p>
 <script>
     var song = document.getElementById("song")
     var A = document.getElementById("A")
@@ -211,7 +225,8 @@
     var Y = document.getElementById("Y")
     var Z = document.getElementById("Z")
     function show() {
-      document.getElementById("btn").style.display = "inline"
+      document.getElementById("btn").style.display = "inline";
+      document.getElementById("loading").style.display = "none"
     }
     function Kids() {
         document.getElementById("btn").style.display="none";
